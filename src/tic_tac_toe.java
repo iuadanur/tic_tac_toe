@@ -11,7 +11,7 @@ public class tic_tac_toe implements ActionListener {
     private boolean xTurn = true;
     private int xScore = 0;
     private int oScore = 0;
-    private String player1;
+    private final String player1;
     private String player2;
 
     public tic_tac_toe(){

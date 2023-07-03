@@ -5,14 +5,13 @@ import java.awt.event.ActionListener;
 
 public class tic_tac_toe implements ActionListener {
 
-    private JFrame frame;
-    private JPanel panel;
-    private JButton[][] buttons = new JButton[3][4];
+    private final JFrame frame;
+    private final JButton[][] buttons = new JButton[3][4];
     private boolean xTurn = true;
     private int xScore = 0;
     private int oScore = 0;
     private final String player1;
-    private String player2;
+    private final String player2;
 
     public tic_tac_toe(){
         frame = new JFrame("Tic-Tac-Toe");
@@ -25,7 +24,7 @@ public class tic_tac_toe implements ActionListener {
         player1 = JOptionPane.showInputDialog(frame, "Enter Player 1 name:");
         player2 = JOptionPane.showInputDialog(frame, "Enter Player 2 name:");
 
-        panel = new JPanel();
+        JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 4));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
@@ -52,6 +51,7 @@ public class tic_tac_toe implements ActionListener {
 
         frame.add(panel, BorderLayout.CENTER);
         frame.setSize(600, 450);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
     public void resetScore(){
